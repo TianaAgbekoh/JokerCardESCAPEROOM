@@ -182,7 +182,7 @@ submitButton.addEventListener("click", () => {
     alert(
       "That is correct. Continue to the next game if you wish to save Eric..."
     );
-    window.location.href = "https://l92fjc.csb.app/"; // redirect to next sandbox
+    window.location.href = "https://olive344.github.io/TargetEscapeRoom/"; // redirect to next sandbox
   } else {
     alert("Incorrect! Try again or it's bye-bye Eric.");
   }
@@ -737,3 +737,4 @@ function checkWin() {
     document.getElementById("myModal2").style.display = "flex";
   }
 }
+
