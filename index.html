@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Using a Modal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- 4 grey boxes to put symbols in -->
+    <div class="row1">
+      <div class="box3 black timer">
+        <div id="timerText" class="timer-text">Time: 20s</div>
+      </div>
+      <div class="box3"></div>
+      <div class="box3"></div>
+      <div class="box3"></div>
+      <div class="box3 center-content">
+        <img src="images/grey square.png" class="squares" />
+        <img id="symbol1" class="symbol-img1" />
+      </div>
+      <div class="box3 center-content">
+        <img src="images/grey square.png" class="squares" />
+        <img id="symbol2" class="symbol-img2" />
+      </div>
+      <div class="box3 center-content">
+        <img src="images/grey square.png" class="squares" />
+        <img id="symbol3" class="symbol-img3" />
+      </div>
+      <div class="box3 center-content">
+        <img src="images/grey square.png" class="squares" />
+        <img id="symbol4" class="symbol-img4" />
+      </div>
+    </div>
+
+      <!-- Boxes for cards-->
+
+    <div class="row2">
+      <div class="box1 clickable center-content">
+        <img
+          src="cards/COVER.jpg"
+          id="joker1"
+          class="card-front"
+          onclick="flipcard1A()"
+        />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="clover1" onclick="flipcard1C()"/>
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="spider1" onclick="flipcard1E()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="heart1" onclick="flipcard1G()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="diamond1" onclick="flipcard1J()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="heart2" onclick="flipcard1I()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="spade1" onclick="flipcard1L()" />
+      </div>
+    </div>
+    <div class="row2">
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="spider2" onclick="flipcard1F()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="spade2" onclick="flipcard1M()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="crow1" onclick="flipcard1O()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="diamond2" onclick="flipcard1K()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img
+          src="cards/COVER.jpg"
+          id="joker2"
+          class="card-front"
+          onclick="flipcard2A()"
+        />
+      </div>
+
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="clover2" onclick="flipcard2D()" />
+      </div>
+      <div class="box1 clickable center-content">
+        <img src="cards/COVER.jpg" id="crow2" onclick="flipcard1P()" />
+      </div>
+    </div>
+
+     <!-- bottom row for inventory/instructions-->
+
+    <div class="row3">
+      <div class="box4 center-content"></div>
+      <div class="box5 clickable shadow center-content">
+        <img src="images/newinventory.png" class="contain-image"  onclick="showModal3()"/>
+      </div>
+
+        <div class="artInstruct clickable hover center-content">
+        <img src="images/instructions.png" onclick="showModal()">
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Dialogue Modal-->
+      <div class="modal center-content" id="myModal">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <div class="modal-body">
+          <img src="images/hehe.png" class="dialogue" />
+          <img src="images/art_transparent.png" class="artimage" />
+        </div>
+      </div>
+      
+      <!-- Lock code Modal-->
+      <div class="modal2" id="myModal2">
+        <div class="column1 black center-content">
+          <img src="images/mapkey.png">
+        </div>
+        <div class="column2 ash-grey">
+          <textscary2 class="movedown">PASSWORD?</textscary2>
+
+             <!-- code for lock -->
+
+          <input class="movedown2" id="lockAnswer" type="text" placeholder="Try to guess~"/>
+        <button class="movedown3" id="unlockBtn" class="unlock-btn">Unlock</button>
+     
+      
+           <!-- code for symbols that will go inside box-->
+      
+          <div class="box3"></div>
+          <div class="box3"></div>
+          <div class="box3 center-content">
+            <img src="images/grey square.png"  class="squares" />
+            <img id="symbol1_modal" class="symbol-img15" class="movedown2" />
+          </div>
+          <div class="box3 center-content">
+            <img src="images/grey square.png" class="squares" />
+            <img id="symbol2_modal" class="symbol-img25" />
+          </div>
+          <div class="box3 center-content">
+            <img src="images/grey square.png" class="squares" />
+            <img id="symbol3_modal" class="symbol-img35" />
+          </div>
+          <div class="box3 center-content">
+            <img src="images/grey square.png" class="squares" />
+            <img id="symbol4_modal" class="symbol-img45" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- Inventory Modal (should be OUTSIDE both modals!) -->
+      <div class="modal3 center-content" id="myModal3">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <div class="modal-inventory black">
+          <div class="columnModal blood">
+            <div class="inventoryBox black center-content">
+              <img src="images/trap.png"/>
+            </div>
+            <div class="inventoryBox dark-grey center-content">
+            </div>
+          </div>
+          <div class="columnModal blood">
+            <div class="inventoryBox dark-grey center-content">
+              <img src="images/funhouse.png" class="inventory-img"/>
+            </div>
+            <div class="inventoryBox black"></div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Time-up Modal-->
+   <div class="Timemodal" id="timeUpModal">
+    <button2 id="resetTimerBtn" onclick="resetGame()"> Art caught you. Try Again?</button2>
+    <textscary>YOU DIED.</textscary>
+  </div>
+      </div>
+    </div>
+
+    <audio src="sounds1/background.mp3" id="background"></audio>
+    <audio src="sounds1/countdown.mp3" id="timer"></audio>
+    <audio src="sounds1/ding.mp3" id="ding"></audio>
+    <audio src="sounds1/clown laugh.mp3" id="haha"></audio>
+    <audio src="sounds1/chainsaw.mp3" id="vroom"></audio>
+    <audio src="sounds1/slowedlaugh.mp3" id="dark"></audio>
+  
+    <script src="script.js"></script>
+  </body>
+</html>
